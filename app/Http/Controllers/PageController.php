@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-       //
+        return view('dashboard');
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users_fb.create');
+        //
     }
 
     /**

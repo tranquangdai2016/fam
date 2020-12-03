@@ -15,6 +15,8 @@ class CreateEmailTable extends Migration
     {
         Schema::create('email', function (Blueprint $table) {
             $table->id();
+            $table->string('user_name');
+            $table->string('pass_word');
             $table->timestamps();
         });
     }

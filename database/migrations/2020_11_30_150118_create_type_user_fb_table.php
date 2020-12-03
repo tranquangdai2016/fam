@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTdsTable extends Migration
+class CreateTypeUserFbTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateUsersTdsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_tds', function (Blueprint $table) {
-            $table->id();
-            $table->string('username');
-            $table->string('passw_word');
-            $table->rememberToken('access_token');
+        Schema::create('type_user_fb', function (Blueprint $table) {
+            $table->id('type_id');
+            $table->string('type_name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateUsersTdsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_tds');
+        Schema::dropIfExists('type_user_fb');
     }
 }

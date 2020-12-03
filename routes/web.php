@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.master');
-});
+Route::get('/login','AuthController@login')->name('auth.login');
+Route::get('/logout','AuthController@logout')->name('auth.logout');
+Route::get('/','PageController@index')->name('dashboard');
+Route::get('test', function () {
+        $user = new \App\Models\User;
+        $user->name = 'dai';
+        $user->role = 1;
+        $user->email = 'daitq@gmail.com';
+        $user->password = bcrypt('123456789');
+        $user->save();
+        echo "Create User success";
+    });
+    

@@ -15,6 +15,18 @@ class CreateUsersFbTable extends Migration
     {
         Schema::create('users_fb', function (Blueprint $table) {
             $table->id();
+            $table->integer('uid');
+            $table->string('password');
+            $table->string('name');
+            $table->integer('email_id');
+            $table->date('date_of_birth');
+            $table->integer('friend');
+            $table->date('date_input');
+            $table->rememberToken('access_token');
+            
+            $table->tinyInteger('status');
+            $table->foreignId('type_id');
+
             $table->timestamps();
         });
     }
